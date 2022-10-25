@@ -885,7 +885,7 @@
 .slide {
   opacity: 0;
   visibility: hidden;
-  transition: 1s;
+  transition: 1.001s;
   position: absolute;
   top: 0px;
 }
