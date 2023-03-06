@@ -1,29 +1,43 @@
 const view = document.querySelectorAll('.slide');
 const pageBody = document.querySelector('.page-body')
 const btnSliders = document.querySelectorAll('.btn-slider')
+
+const currentSlide = 'slide-current'
+const btnSlide = 'btn-slider-active'
+
+const firstColor = '#849d8f'
+const secondColor = '#8996a6'
+const thirdColor = '#9d8b84'
+
 let i = 0;
 let slider = function () {
-  if (view[i].classList.contains('slide-current')) {
-    view[i].classList.remove('slide-current')
-    i++;
-    if (i > 2) {
-      i = 0
+  view.forEach((item) => {
+    if (item.classList.contains(currentSlide)) {
+      item.classList.remove(currentSlide)
     }
-    view[i].classList.add('slide-current')
+  })
+
+  if (i >= 2) {
+    i = 0
+    view[i].classList.add(currentSlide)
+  } else {
+    i++;
+    view[i].classList.add(currentSlide)
   }
 
-  if (view[0].classList.contains('slide-current')) {
-    pageBody.style.backgroundColor = "#849d8f";
-    btnSliders[2].classList.remove('btn-slider-active')
-    btnSliders[0].classList.add('btn-slider-active')
-  } else if (view[1].classList.contains('slide-current')) {
-    pageBody.style.backgroundColor = "#8996a6";
-    btnSliders[0].classList.remove('btn-slider-active')
-    btnSliders[1].classList.add('btn-slider-active')
-  } else if (view[2].classList.contains('slide-current')) {
-    pageBody.style.backgroundColor = "#9d8b84"
-    btnSliders[1].classList.remove('btn-slider-active')
-    btnSliders[2].classList.add('btn-slider-active')
+
+  if (view[0].classList.contains(currentSlide)) {
+    pageBody.style.backgroundColor = firstColor;
+    btnSliders[2].classList.remove(btnSlide)
+    btnSliders[0].classList.add(btnSlide)
+  } else if (view[1].classList.contains(currentSlide)) {
+    pageBody.style.backgroundColor = secondColor;
+    btnSliders[0].classList.remove(btnSlide)
+    btnSliders[1].classList.add(btnSlide)
+  } else if (view[2].classList.contains(currentSlide)) {
+    pageBody.style.backgroundColor = thirdColor
+    btnSliders[1].classList.remove(btnSlide)
+    btnSliders[2].classList.add(btnSlide)
   }
 }
 
