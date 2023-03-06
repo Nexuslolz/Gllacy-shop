@@ -886,8 +886,8 @@
   opacity: 0;
   visibility: hidden;
   transition: 1s;
-  position: absolute;
-  top: 0px;
+  position: relative;
+  height: 0;
 }
 
 .slide-current {
@@ -895,6 +895,7 @@
   visibility: visible;
   transition: 1s;
   position: relative;
+  height: auto;
 }
 
 .bread li {
