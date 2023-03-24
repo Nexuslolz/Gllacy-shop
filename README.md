@@ -5,7 +5,7 @@ https://nexuslolz.github.io/Gllacy-shop/
 
 ## Preview
 
-<img src='img/Glacy.gif' width='550'>
+<img src='img/Glacy.gif' width='350'>
 
 ## Описание
 
